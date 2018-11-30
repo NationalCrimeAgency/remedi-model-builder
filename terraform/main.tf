@@ -21,6 +21,7 @@ data "template_file" "model-builder" {
     MODEL_BUCKET_NAME = "${var.model_bucket}"
     GOLD_BUCKET_NAME = "${var.gold_bucket}"
     USER_CONTRIBUTION_BUCKET_NAME = "${var.user_contribution_bucket}"
+    DATASETS = "${var.opus_datasets}"
   }
 }
 

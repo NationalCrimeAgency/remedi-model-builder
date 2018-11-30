@@ -128,8 +128,9 @@ cat fg_data_dedup.$LANGUAGE >> data.$LANGUAGE
 
 done
 
-rm -Rf fg_data_dedup.en
-rm -Rf fg_data_dedup.$LANGUAGE
+# Rename these files as we can use them for tuning
+mv fg_data_dedup.en tuning.en.1
+mv fg_data_dedup.$LANGUAGE tuning.fl
 
 ###
 

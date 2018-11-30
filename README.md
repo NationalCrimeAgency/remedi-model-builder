@@ -14,6 +14,11 @@ The data sources are:
 
 A CloudWatch Log will be created (`/remedi/model-builder/output`) for recording the output of the model building process.
 
+If translator or user contributed data is provided (via the S3 bucket), then after training the model tuning will be performed against this data.
+This could take a long time (usually several days), but when finished a server configuration file containing the tuned weights
+will be uploaded into the S3 bucket alongside the models (e.g. `nl_en.cfg` for a Dutch to English model).
+The trained models are uploaded to S3 prior to tuning, and can be used with the default configuration whilst tuning is taking place. 
+
 There are 2 separate parts of this project:
 
 ## Packer

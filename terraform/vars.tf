@@ -67,3 +67,8 @@ variable "disk_size" {
   description = "Size of the disk to attach to the model builder, in GB"
   default = 100
 }
+
+variable "opus_datasets" {
+  description = "Space separated list of the OPUS (http://opus.nlpl.eu/) datasets to include. Names should be the dataset names as they appear in the download path of the dataset."
+  default = "Books DGT DOGC ECB EUbookshop EUconst Europarl GNOME GlobalVoices hrenWaC JRC-Acquis KDE4 KDEdoc memat MBS MultiUN News-Commentary11 OfisPublik OpenOffice3 OpenSubtitles2018 ParaCrawl PHP SETIMES2 SPC Tatoeba TED2013 Tanzil TEP Ubuntu UN WikiSource Wikipedia WMT-News XhosaNavy"
+}

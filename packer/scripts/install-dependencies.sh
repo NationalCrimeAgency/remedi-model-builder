@@ -3,10 +3,12 @@ set -e
 
 echo "Updating apt and patching"
 sudo apt-get update
-sudo apt-get upgrade -f -y --force-yes
+sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -f -yq --force-yes
 
-echo "Installing Java 8"
-sudo apt-get install -y openjdk-8-jdk
+apt-cache search openjdk
+
+echo "Installing Java 11"
+sudo apt-get install -y openjdk-11-jdk
 
 echo "Installing Python/Pip"
 sudo apt-get install -y python3-pip
