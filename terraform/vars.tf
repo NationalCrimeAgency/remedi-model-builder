@@ -12,6 +12,18 @@ variable "language_names" {
   default = ["Dutch"]
 }
 
+variable "language_shrink" {
+  description = "The amount of data to use from the OPUS dataset when training a model (e.g. 0.75 means use 75%), in the same order as languages"
+  type = "list"
+  default = ["0.75"]
+}
+
+variable "language_oversample" {
+  description = "The number of times to oversample user provided datasets when training a model, in the same order as languages"
+  type = "list"
+  default = ["3"]
+}
+
 variable "model_bucket" {
   description = "The name of the S3 bucket containing the models (not created by the module)"
 }

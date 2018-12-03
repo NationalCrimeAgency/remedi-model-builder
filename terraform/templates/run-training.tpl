@@ -6,6 +6,12 @@ export LANGUAGE
 LANGUAGE_NAME=${LANGUAGE_NAME}
 export LANGUAGE_NAME
 
+SHRINK=${LANGUAGE_SHRINK}
+export SHRINK
+
+OVERSAMPLE=${LANGUAGE_OVERSAMPLE}
+export OVERSAMPLE
+
 # Get background data
 
 mkdir -p /opt/model-builder/training/bg_data

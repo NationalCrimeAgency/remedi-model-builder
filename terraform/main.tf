@@ -18,6 +18,8 @@ data "template_file" "model-builder" {
   vars {
     LANGUAGE = "${element(var.languages, count.index)}"
     LANGUAGE_NAME = "${element(var.language_names, count.index)}"
+    LANGUAGE_SHRINK = "${element(var.language_shrink, count.index)}"
+    LANGUAGE_OVERSAMPLE = "${element(var.language_oversample, count.index)}"
     MODEL_BUCKET_NAME = "${var.model_bucket}"
     GOLD_BUCKET_NAME = "${var.gold_bucket}"
     USER_CONTRIBUTION_BUCKET_NAME = "${var.user_contribution_bucket}"

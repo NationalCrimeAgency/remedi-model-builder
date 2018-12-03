@@ -2,8 +2,6 @@
 
 MOSES_PATH=/opt/model-builder/mosesdecoder
 PROCESSOR_PATH=/opt/model-builder/jars/processor.jar
-OVERSAMPLE=3
-SHRINK=0.75
 
 start=`date +%s`
 
@@ -40,7 +38,7 @@ done
 
 ###
 
-echo "Shrinking BG files"
+echo "Shrinking BG files (with shrink factor $SHRINK)"
 
 for f in clean_bg_data_2/*; do
 
@@ -119,7 +117,7 @@ rm -Rf fg_data.$LANGUAGE
 
 ###
 
-echo "Merging FG data with BG (with oversampling)"
+echo "Merging FG data with BG (with oversampling multiplier $OVERSAMPLE)"
 
 for i in 1..$OVERSAMPLE; do
 
