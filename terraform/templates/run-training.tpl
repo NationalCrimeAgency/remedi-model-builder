@@ -18,8 +18,8 @@ mkdir -p /opt/model-builder/training/bg_data
 cd /opt/model-builder/training/bg_data
 
 for DATASET in ${DATASETS}; do
-
-  wget -q http://opus.nlpl.eu/download/$DATASET/en-$LANGUAGE.txt.zip
+  echo "Downloading http://opus.nlpl.eu/download.php?f=$DATASET/moses/en-$LANGUAGE.txt.zip"
+  wget -q http://opus.nlpl.eu/download.php?f=$DATASET/moses/en-$LANGUAGE.txt.zip
   unzip en-$LANGUAGE.txt.zip
   rm en-$LANGUAGE.txt.zip
 

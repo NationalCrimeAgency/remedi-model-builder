@@ -81,6 +81,6 @@ variable "disk_size" {
 }
 
 variable "opus_datasets" {
-  description = "Space separated list of the OPUS (http://opus.nlpl.eu/) datasets to include. Names should be the dataset names as they appear in the download path of the dataset."
-  default = "Books DGT DOGC ECB EUbookshop EUconst Europarl GNOME GlobalVoices hrenWaC JRC-Acquis KDE4 KDEdoc memat MBS MultiUN News-Commentary11 OfisPublik OpenOffice3 OpenSubtitles2018 ParaCrawl PHP SETIMES2 SPC Tatoeba TED2013 Tanzil TEP Ubuntu UN WikiSource Wikipedia WMT-News XhosaNavy"
+  description = "Space separated list of the OPUS (http://opus.nlpl.eu/) datasets to include. Names should be the dataset names as they appear in the download path of the dataset (with the version number)."
+  default = "Books/v1 DGT/v4 DOGC/v2 ECB/v1 EMEA/v3 EUbookshop/v2 EUconst/v1 Europarl/v7 giga-fren/v2 GNOME/v1 GlobalVoices/v2017q3 hrenWaC/v1 KDE4/v2 KDEdoc/v1 memat/v1 MontenegrinSubs/v1 MultiUN/v1 News-Commentary/v11 OpenOffice/v3 OpenSubtitles/v2018 ParaCrawl/v1 PHP/v1 SETIMES/v2 SPC/v1 Tatoeba/v2 TedTalks/v1 TED2013/v1.1 Tanzil/v1 TEP/v1 Ubuntu/v14.10 UN/v20090831 WikiSource/v1 Wikipedia/v1.0 WMT-News/v2014 XhosaNavy/v1"
 }
