@@ -19,7 +19,7 @@ cd /opt/model-builder/training/bg_data
 
 for DATASET in ${DATASETS}; do
   echo "Downloading http://opus.nlpl.eu/download.php?f=$DATASET/moses/en-$LANGUAGE.txt.zip"
-  wget -q http://opus.nlpl.eu/download.php?f=$DATASET/moses/en-$LANGUAGE.txt.zip
+  wget -O en-$LANGUAGE.txt.zip -q http://opus.nlpl.eu/download.php?f=$DATASET/moses/en-$LANGUAGE.txt.zip
   unzip en-$LANGUAGE.txt.zip
   rm en-$LANGUAGE.txt.zip
 
