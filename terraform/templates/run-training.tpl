@@ -14,19 +14,27 @@ export OVERSAMPLE
 
 # Get background data
 
-mkdir -p /opt/model-builder/training/bg_data
-cd /opt/model-builder/training/bg_data
+mkdir -p /opt/model-builder/training/download
+cd /opt/model-builder/training/download
 
 for DATASET in ${DATASETS}; do
   echo "Downloading http://opus.nlpl.eu/download.php?f=$DATASET/moses/en-$LANGUAGE.txt.zip"
-  wget -O en-$LANGUAGE.txt.zip -q http://opus.nlpl.eu/download.php?f=$DATASET/moses/en-$LANGUAGE.txt.zip
-  unzip -n en-$LANGUAGE.txt.zip
-  rm en-$LANGUAGE.txt.zip
+  wget -O en-$LANGUAGE.zip -q http://opus.nlpl.eu/download.php?f=$DATASET/moses/en-$LANGUAGE.txt.zip
 
+  if [ -s en-$LANGUAGE.zip ]
+  then
+    unzip -n en-$LANGUAGE.zip
+  else
+    echo "Dataset $DATASET not found"
+  fi
+
+  rm -f en-$LANGUAGE.zip
 done
 
-rm *.ids
-rm README
+mkdir -p /opt/model-builder/training/bg_data
+
+mv *.en /opt/model-builder/training/bg_data
+mv *.$LANGUAGE /opt/model-builder/training/bg_data
 
 # Get foreground data
 
